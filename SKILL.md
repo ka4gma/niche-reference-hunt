@@ -3,41 +3,48 @@ name: niche-reference-hunt
 description: >-
   Pesquisa referências visuais reais de um nicho específico (ex.: personal
   trainer, psicologia, advocacia) no Behance, e no Pinterest quando houver
-  acesso, analisa cada uma com evidência e salva como notas datadas na
-  biblioteca de referências do usuário (vault Obsidian), para não repetir a
-  pesquisa a cada projeto. Sempre consulta o vault antes de buscar.
+  acesso, analisa cada uma com evidência e salva como notas datadas, na
+  biblioteca de referências do usuário (vault Obsidian) quando houver, ou em
+  uma pasta `referencias/` do projeto. Consulta as notas já salvas antes de
+  buscar, para não repetir a pesquisa.
 when_to_use: >-
   Use quando o usuário pedir referências, inspirações ou "refs" de um nicho
   para um site ou landing page; antes da fase de direção criativa de um
   projeto novo; ou para alimentar a biblioteca de design com um nicho ainda
   não coberto. Exemplos: "procure refs de site para personal trainer",
-  "pesquise no Behance refs de clínica de psicologia", "salve 3 referências
-  no Obsidian". Não use para analisar uma única página já conhecida sem
+  "pesquise no Behance refs de clínica de psicologia", "salve 3 referências". Não use para analisar uma única página já conhecida sem
   salvar, nem para construir o site.
 ---
 
 # Niche Reference Hunt
 
-Transforma "preciso de referências para o site de X" em notas permanentes no vault. O objetivo não é coletar muito: é ter poucas referências **abertas, observadas e comparadas**, guardadas para o próximo projeto do mesmo nicho.
+Transforma "preciso de referências para o site de X" em notas permanentes (no vault do usuário ou em uma pasta `referencias/`). O objetivo não é coletar muito: é ter poucas referências **abertas, observadas e comparadas**, guardadas para o próximo projeto do mesmo nicho.
 
 ## Regras fixas
 
-1. **Vault primeiro.** Antes de qualquer busca na web, procure no vault pelo nicho, pelas URLs e por notas de projeto parecidas. Se o nicho já tem referências analisadas, reutilize e só complete o que falta.
+1. **Notas salvas primeiro.** Antes de qualquer busca na web, procure nas notas já salvas (vault ou `referencias/`) pelo nicho, pelas URLs e por projetos parecidos. Se o nicho já tem referências analisadas, reutilize e só complete o que falta.
 2. **Quantidade pedida manda.** Sem número, traga 3. Nunca colete em massa.
 3. **Variedade.** Das refs escolhidas, pelo menos uma deve resolver o mesmo problema de forma diferente (por exemplo claro × escuro, editorial × template). Um nicho dominado por um clichê precisa de um contraponto.
 4. **`analisada` só com observação direta.** Abra as imagens, descreva só o que viu. Cada afirmação leva **[F]** fato, **[H]** hipótese ou **[R]** recomendação. Fonte, tecnologia ou animação não confirmada vira "não verificado".
 5. **Uma referência isolada não vira regra.** Padrão só nasce com 2 ou mais referências analisadas (ou 1 referência + 1 projeto).
 6. **Sem copiar, sem dado inventado.** Extraia princípios. Contadores, selos e depoimentos de template são anotados como risco, nunca reaproveitados.
 7. **Sem credenciais.** Não digite senha nem peça tokens. Pinterest e outros com login só entram se o navegador já estiver autenticado pelo usuário.
-8. **Capturas são material de estudo** salvo no vault do usuário. Não publique nem redistribua.
+8. **Capturas são material de estudo**, guardadas só no destino do usuário. Não publique nem redistribua.
 
 ## Procedimento
 
-### 1. Localizar o vault e o template
-Ache o caminho da biblioteca no `CLAUDE.md` do usuário (procure "biblioteca", "Obsidian" ou "designer zika"). Se não houver, pergunte uma vez. Leia o índice da área de referências e o template de referência do vault. Sem template, use [references/analise-checklist.md](references/analise-checklist.md).
+### 1. Escolher o destino das notas e o template
+Escolha o primeiro destino que existir:
+1. **Vault do usuário:** se o `CLAUDE.md` do usuário (ou do projeto) apontar uma biblioteca de referências (procure "biblioteca", "Obsidian", "vault"), use-a, com o índice, o template e as regras dela. Isso não muda o fluxo de quem já tem vault.
+2. **Pasta do projeto:** sem vault, crie `referencias/` no diretório de trabalho (pergunte uma vez se pode), com `index.md`, `<nicho>/<nome-da-ref>.md` e `_anexos/<nome-da-ref>/`.
+3. **Sem acesso a arquivos:** entregue as notas no chat, em um único Markdown.
+
+Sem template próprio, use [references/analise-checklist.md](references/analise-checklist.md): ele traz o frontmatter e as seções.
+
+**Sem navegador** (só busca e leitura de página): encontre os projetos e registre cada nota com `status: salva`, só com os dados do texto. Não marque `analisada` sem ter visto as imagens.
 
 ### 2. Consultar o que já existe
-Busque por palavra-chave: nicho, sinônimos, nome de projetos do mesmo setor. Anote as referências já analisadas e as cores/abordagens que elas ocupam, para escolher contrapontos.
+Busque por palavra-chave no destino escolhido: nicho, sinônimos, nome de projetos do mesmo setor. Anote as referências já analisadas e as cores/abordagens que elas ocupam, para escolher contrapontos.
 
 ### 3. Buscar
 Monte 2 a 3 consultas combinando o nicho com o tipo de peça, em inglês e português (ex.: `personal trainer website ui`, `landing page personal trainer`).
@@ -53,16 +60,17 @@ Monte 2 a 3 consultas combinando o nicho com o tipo de peça, em inglês e portu
 **Aplicativos de desktop** (quando a referência está fora do navegador): use o Agent Desktop, consultando elementos específicos em vez de árvores completas.
 
 ### 4. Escolher
-Cruze com o vault: descarte duplicatas, descarte quem só repete um clichê já coberto, garanta um contraponto. Prefira estudos de caso com texto do autor (dão decisões explicadas) a quadros isolados.
+Cruze com as notas existentes: descarte duplicatas, descarte quem só repete um clichê já coberto, garanta um contraponto. Prefira estudos de caso com texto do autor (dão decisões explicadas) a quadros isolados.
 
 ### 5. Analisar
 Para cada referência, siga [references/analise-checklist.md](references/analise-checklist.md). Imagem de apresentação do autor não é captura de viewport: registre isso na coluna Viewport. Texto do autor com métricas ("dobrou o tráfego") entra como **alegação do autor, não verificada**.
 
-### 6. Salvar no vault
+### 6. Salvar
 - Capturas datadas em `_anexos/<nome-da-nota>/` (jpg, até 1200 px de largura, `nome-NN-descricao-AAAA-MM-DD.jpg`).
-- Uma nota por referência, com o template do vault, `status: analisada` somente depois da análise.
-- Atualize o índice da pasta, o dashboard (últimas 10 referências) e confira se todos os `[[links]]` resolvem.
-- Se 2 ou mais referências analisadas mostram o mesmo princípio, crie a nota de padrão (maturidade `emergente`), compare as abordagens e registre no índice central de padrões.
+- Uma nota por referência, com o template do destino, `status: analisada` somente depois da análise.
+- Atualize o índice e, se o destino tiver, o painel de referências recentes (últimas 10). Confira se todos os links entre notas resolvem.
+- Se 2 ou mais referências analisadas mostram o mesmo princípio, crie a nota de padrão (maturidade `emergente`), compare as abordagens e registre no índice de padrões.
+- Em `referencias/` de um projeto com git, mantenha `_anexos/` fora do versionamento público.
 
 ### 7. Relatar
 Liste as notas criadas e atualizadas, o que ficou "não verificado" e o que não foi acessado (Pinterest, por exemplo). Diga qual contraponto cada referência oferece.

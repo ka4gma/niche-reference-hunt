@@ -19,7 +19,8 @@ scripts/download-images.mjs      baixa as imagens (Node 18+, sem dependências)
 ## Requisitos e limites
 
 - Precisa de um navegador controlável pelo Claude (painel embutido, Playwright ou Claude in Chrome) para abrir o Behance.
-- A skill procura o caminho do vault no `CLAUDE.md` do usuário; sem isso, pergunta uma vez. Ela não funciona bem sem alguma biblioteca de notas para gravar.
+- Destino das notas: usa o vault do usuário se o `CLAUDE.md` apontar um; sem vault, cria `referencias/` no projeto; sem acesso a arquivos, entrega um Markdown no chat.
+- Sem navegador, só registra notas como `salva` (a análise exige ter visto as imagens).
 - Os scripts dependem do HTML atual do Behance (JSON-LD e `project_modules`); se o site mudar, ajustar `behance-collect.js`.
 - Pinterest não é acessado sem sessão já aberta pelo usuário. Nenhuma credencial é pedida ou digitada.
 - As imagens baixadas são material de estudo; não publique nem redistribua.
